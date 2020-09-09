@@ -25,7 +25,7 @@ sudo kubeadm init --apiserver-advertise-address=$(curl 169.254.169.254/latest/me
 
 ![result_1](snapshots/result_1.png)
 
-## Join all the worker nodes using the `kubeadm join` command appeared after initializing our Kubertenes control-plane
+## Join all the worker nodes using the `kubeadm join` command appeared after initializing the Kubernetes control-plane
 ![join_worker_1](snapshots/join_worker_1.png)
 ![join_worker_2](snapshots/join_worker_2.png)
 
