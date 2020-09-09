@@ -1,7 +1,8 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
   This tamplate creates a master node and worker nodes as many as you want with kubectl, 
-  kubelet, kubeadm, and docker installed on an ubuntu image in regions Oregon and N. Virginia.
+  kubelet, kubeadm, and docker installed on an ubuntu image in Oregon and N. Virginia
+  regions.
 Mappings:
   Region:
     us-east-1:
