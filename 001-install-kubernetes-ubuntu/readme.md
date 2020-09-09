@@ -17,7 +17,7 @@ newgrp
 ![console_2](snapshots/console_2.png)
 
 ## Initialize Kubernetes control-plane using the following command on the master node with sudo 
-Use `--ignore-preflight-errors=NumCPU` flag if your instances do not meet the CPU requirement if your instance type is t2.micro. You do not need to use this flag with t2.medium type (t2.micro and t2.medium are only instances which are allowed in the CloudFormation template).
+Use `--ignore-preflight-errors=NumCPU` flag if your instances do not meet the CPU requirement - like a t2.micro. You do not need to use this flag with t2.medium type (t2.micro and t2.medium are only instances which are allowed in the CloudFormation template).
 ```bash
 sudo kubeadm init --apiserver-advertise-address=$(curl 169.254.169.254/latest/meta-data/local-ipv4) --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU
 ```
