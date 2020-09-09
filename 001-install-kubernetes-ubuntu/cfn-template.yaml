@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
-  This tamplate creates a master node and worker nodes as many as you want with kubectl, 
+  This template creates a master node and worker nodes as many as you want with kubectl, 
   kubelet, kubeadm, and docker installed on an ubuntu image in Oregon or N. Virginia
   regions.
 Mappings:
