@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-application = Flask(__name__)
+app = Flask(__name__)
 
 def roman_converter(n):   
     symbols = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), 
@@ -12,11 +12,11 @@ def roman_converter(n):
         n %= num
     return roman_number
 
-@application.route('/', methods = ['GET'])
+@app.route('/', methods = ['GET'])
 def main_get():
     return render_template('index.html', developer_name = 'Talha', not_valid = False)
 
-@application.route('/', methods = ['POST'])
+@app.route('/', methods = ['POST'])
 def main_post():
     alpha = request.form['number']
     if not alpha.isdecimal():
@@ -28,4 +28,4 @@ def main_post():
 
 
 if __name__ == '__main__':
-    application.run('0.0.0.0', port = 80, debug = True)
+    app.run('0.0.0.0', port = 80, debug = True)
