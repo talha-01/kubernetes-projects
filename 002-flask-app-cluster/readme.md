@@ -10,6 +10,7 @@ wget -P templates https://raw.githubusercontent.com/talha-01/aws-projects/master
 wget https://raw.githubusercontent.com/talha-01/aws-projects/master/001-roman-numerals-converter/app.py
 ```
 ## Create the Dockerfile
+The command below will create a Dockerfile with the instructions of pulling python:alpine image, copying all the files and folders in this directory into the image, installing flask, opening port 80, and running the application. The exposed port and the port that is specified in your app file should match.
 ```bash
 cat << EOF > Dockerfile -
 FROM python:alpine
@@ -34,11 +35,15 @@ docker build -t talhas/roman-converter-app:v1 .
 ```bash
 docker login
 ```
+Make sure that you have a repository in your Docker Hub account. If not, you need to create a repository on Docker Hub. Alternatively, you can use other registries such as AWS ECR. However, you need to follow thier instructions for the login and push process if you choose so.
+
 ```bash 
 docker push talhas/roman-converter-app:v1
 ```
+The steps above can be completed using any computer, however, you should use the Kubernetes master node for the rest of the tutorial.
 
 ## Create Kubernetes Pod
+The commands below will create a pod with roman-converter-app running inside at port 80, which is the same port that was exposed when creating the image above.
 ```bash
 cat << EOF > roman-app-pod.yaml -
 apiVersion: v1
@@ -60,6 +65,7 @@ kubectl apply -f roman-app-pod.yaml
 ```
 
 ## Create Kubernetes Service
+The commands below will create a Kubernetes service object for the pods labeled with `app: roman-app`, expose the application outside at the port 30010. 
 ```bash
 cat << EOF > roman-app-service.yaml -
 apiVersion: v1
@@ -80,7 +86,7 @@ EOF
 ```bash
 kubectl apply -f roman-app-service.yaml
 ```
-Check your pod and service if both are running.
+You can use the commands below on the master node to check your pod and service if both are running.
 ```bash
 kubectl get nodes
 kubectl get services
