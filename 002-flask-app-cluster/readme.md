@@ -81,8 +81,9 @@ EOF
 ```bash
 kubectl apply -f roman-app-service.yaml
 ```
-Control your pod is 
+Check your pod and service if both are running.
 ```bash
+kubectl get nodes
 kubectl get services
 ```
 
