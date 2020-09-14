@@ -3,13 +3,12 @@
 In this tutorial, we will create and push our docker image on our local computer, and deploy it using a Kubernetes cluster initialized on EC2 instances.
 You can follow the first tutorial to create a Kubernetes cluster with master and worker nodes.
 
-## Clone the application from GitHub
+## Download the application from GitHub
 ```bash
 wget -P templates https://raw.githubusercontent.com/talha-01/aws-projects/master/001-roman-numerals-converter/templates/index.html
 wget -P templates https://raw.githubusercontent.com/talha-01/aws-projects/master/001-roman-numerals-converter/templates/result.html
 wget https://raw.githubusercontent.com/talha-01/aws-projects/master/001-roman-numerals-converter/app.py
 ```
-
 ## Create the Dockerfile
 ```bash
 cat << EOF > Dockerfile -
@@ -28,7 +27,7 @@ When creating the image, you sould use the following command.
 docker build -t <DockerHubRepoName/ImageName>:<Version> <DockerfileDirectory>
 ```
 ```bash
-docker build -t talhas/roman-conveter-app:v1 .
+docker build -t talhas/roman-converter-app:v1 .
 ```
 
 ## Login your Docker Hub account and push the image to your repository
