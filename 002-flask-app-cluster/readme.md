@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/talha-01/aws-projects/master/001-roman-nu
 
 ## Create the Dockerfile
 ```bash
-cat << EOF > Dockerfiles -
+cat << EOF > Dockerfile -
 FROM python:alpine
 COPY . /app
 WORKDIR /app
