@@ -39,7 +39,7 @@ docker login
 docker push talhas/roman-converter-app:v1
 ```
 
-## Create Kubernetes Deployment
+## Create Kubernetes Pod
 ```bash
 cat << EOF > roman-app-pod.yaml -
 apiVersion: v1
