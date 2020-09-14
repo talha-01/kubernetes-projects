@@ -92,7 +92,7 @@ curl localhost:30010
 ```
 
 ## Check your website from browser
-http:\<PublicIp of master node\>:30010
+http://\<PublicIp of master node\>:30010
 
 Make sure that the master node's security group allows inbound traffic at the port 30010!
 
