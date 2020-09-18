@@ -3,7 +3,7 @@
 ## Clone the repository on the master node
 ```bash
 cd
-git clone ...
+git clone https://github.com/talha-01/kubernetes-projects.git
 ```
 
 ## Create an image of the application and push Docker Hub
