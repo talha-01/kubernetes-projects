@@ -14,7 +14,6 @@ spec:
       labels:
         app: phonebook-v1
     spec:
-      terminationGracePeriodSeconds: 30
       containers:
       - name: phonebook
         image: talhas/phonebook:latest
