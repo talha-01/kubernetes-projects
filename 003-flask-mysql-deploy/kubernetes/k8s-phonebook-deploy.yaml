@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: phonebook
-        image: talhas/phonebook:v1
+        image: talhas/phonebook:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 5000
